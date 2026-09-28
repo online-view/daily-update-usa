@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Update USA – Today's Top News from the United States</title>
+<meta name="description" content="Daily Update USA brings you five fresh news stories from across the United States every day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213d;--red:#c8102e;--paper:#f6f5f1;--card:#fff;--line:#dcdad2;--muted:#5c6273}
+@media (prefers-color-scheme:dark){:root{--ink:#eef0f6;--paper:#0e1422;--card:#161d30;--line:#2a3350;--muted:#9aa3ba}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;line-height:1.65}
+h1,h2,h3,.sans{font-family:"Libre Franklin",Arial,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header.top{background:#14213d;color:#fff;border-bottom:4px solid var(--red)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;flex-wrap:wrap;gap:8px}
+.logo{font:800 1.5rem "Libre Franklin",Arial,sans-serif;letter-spacing:-.02em;margin:0}
+.logo span{color:#ff5a72}
+#today{font:500 .85rem "Libre Franklin",Arial,sans-serif;opacity:.85}
+
+/* ===== HERO BANNER (image intentionally left empty for now) ===== */
+.hero{margin:16px auto;min-height:220px;border:2px dashed var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:var(--card)}
+.hero h2{margin:0;font-size:clamp(1.4rem,4vw,2.2rem);line-height:1.2}
+.hero p{margin:6px 0 0;color:var(--muted)}
+/* TODO: later add the banner image here, e.g. .hero{background:url('banner.jpg') center/cover} */
+
+/* ===== AD SLOT STYLE (placeholder boxes – remove border/label after pasting real code) ===== */
+.ad-slot{margin:18px auto;text-align:center;min-height:60px;border:1px dashed #b7b4a8;color:var(--muted);font:600 .8rem "Libre Franklin",Arial,sans-serif;padding:8px;overflow:hidden;max-width:100%}
+.sponsored{display:block;text-align:center;font:600 .95rem "Libre Franklin",Arial,sans-serif;margin:8px 0}
+.sponsored a{color:var(--red)}
+
+.layout{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+@media(max-width:860px){.layout{grid-template-columns:1fr}}
+.story{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px;margin-bottom:16px}
+.story .txt{flex:1 1 60%;min-width:0}
+.story .pic{flex:0 0 38%;max-width:38%}
+.story .pic img{width:100%;height:auto;border-radius:4px;display:block;object-fit:cover}
+.story h3{margin:0 0 4px;font-size:1.2rem;line-height:1.25}
+.story time{font:500 .78rem "Libre Franklin",Arial,sans-serif;color:var(--red)}
+.story p{margin:8px 0 0;white-space:pre-line;overflow-wrap:anywhere}
+@media(max-width:520px){.story{padding:12px;gap:10px}.story h3{font-size:1rem}.story p{font-size:.92rem}}
+#status{padding:24px;text-align:center;color:var(--muted)}
+aside .ad-slot{position:sticky;top:12px}
+footer{background:#14213d;color:#cfd4e4;margin-top:32px;padding:24px 0;font:500 .9rem "Libre Franklin",Arial,sans-serif}
+footer a{color:#fff;margin-right:14px}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <h1 class="logo">Daily Update <span>USA</span></h1>
+  <div id="today"></div>
+</div></header>
+
+<div class="wrap">
+
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ 👉 AD SLOT 1 — TOP BANNER (Adsterra "Banner" 728x90 / 320x50) ║
+     ║ Paste your Adsterra Banner code inside the div below.       ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+<div class="ad-slot" id="ad-slot-1">
+  AD SLOT 1 – TOP BANNER (paste Adsterra Banner code here)
+  <!-- PASTE_ADSTERRA_BANNER_CODE_HERE -->
+</div>
+
+<!-- ===== HERO BANNER: empty on purpose, image will be added later ===== -->
+<section class="hero" id="hero-banner">
+  <div><h2>Your daily dose of news from across the USA</h2><p>Five fresh stories, updated every day.</p></div>
+</section>
+
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ 👉 AD SLOT 2 — SMARTLINK (Adsterra "Smartlink")               ║
+     ║ Replace PASTE_YOUR_SMARTLINK_URL_HERE with your link.       ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+<span class="sponsored" id="ad-slot-2">Sponsored: <a href="PASTE_YOUR_SMARTLINK_URL_HERE" target="_blank" rel="sponsored noopener">Check today's special offer</a></span>
+
+<div class="layout">
+<main>
+  <div id="status">Loading today's news…</div>
+  <div id="news-a"></div><!-- stories 1-2 -->
+
+  <!-- ╔════════════════════════════════════════════════════════════╗
+       ║ 👉 AD SLOT 3 — NATIVE BANNER (Adsterra "Native Banner")       ║
+       ║ Shows after story #2. Paste the code inside the div below.  ║
+       ╚════════════════════════════════════════════════════════════╝ -->
+  <div class="ad-slot" id="ad-slot-3">
+    AD SLOT 3 – NATIVE BANNER (paste Adsterra Native Banner code here)
+    <!-- PASTE_ADSTERRA_NATIVE_BANNER_CODE_HERE -->
+  </div>
+
+  <div id="news-b"></div><!-- stories 3-4 -->
+
+  <!-- ╔════════════════════════════════════════════════════════════╗
+       ║ 👉 AD SLOT 5 — IN-CONTENT BANNER (Adsterra "Banner" 468x60)   ║
+       ║ Shows after story #4. Paste the code inside the div below.  ║
+       ╚════════════════════════════════════════════════════════════╝ -->
+  <div class="ad-slot" id="ad-slot-5">
+    AD SLOT 5 – IN-CONTENT BANNER (paste Adsterra Banner code here)
+    <!-- PASTE_ADSTERRA_INCONTENT_BANNER_CODE_HERE -->
+  </div>
+
+  <div id="news-c"></div><!-- story 5 -->
+</main>
+
+<aside>
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ 👉 AD SLOT 4 — SIDEBAR BANNER (Adsterra "Banner" 300x250)     ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+<div class="ad-slot" id="ad-slot-4" style="min-height:250px">
+  AD SLOT 4 – SIDEBAR 300x250 (paste Adsterra Banner code here)
+  <!-- PASTE_ADSTERRA_SIDEBAR_BANNER_CODE_HERE -->
+</div>
+</aside>
+</div>
+
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ 👉 AD SLOT 6 — BOTTOM BANNER (Adsterra "Banner" 728x90/320x50)║
+     ╚════════════════════════════════════════════════════════════╝ -->
+<div class="ad-slot" id="ad-slot-6">
+  AD SLOT 6 – BOTTOM BANNER (paste Adsterra Banner code here)
+  <!-- PASTE_ADSTERRA_BOTTOM_BANNER_CODE_HERE -->
+</div>
+
+</div>
+
+<footer><div class="wrap">
+  <p>© <span id="yr"></span> Daily Update USA. All rights reserved.</p>
+  <a href="privacy.html">Privacy Policy</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div></footer>
+
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ 👉 AD SLOT 7 — POPUNDER (Adsterra "Popunder")                 ║
+     ║ Paste the Adsterra Popunder <script> tag just below.        ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+<!-- PASTE_ADSTERRA_POPUNDER_SCRIPT_HERE -->
+
+<!-- ╔════════════════════════════════════════════════════════════╗
+     ║ 👉 AD SLOT 8 — SOCIAL BAR (Adsterra "Social Bar")             ║
+     ║ Paste the Adsterra Social Bar <script> tag just below.      ║
+     ╚════════════════════════════════════════════════════════════╝ -->
+<!-- PASTE_ADSTERRA_SOCIAL_BAR_SCRIPT_HERE -->
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCUBsazHzsb4HUeu4sg3cWRRJFGJGbK1-Q",
+  authDomain: "daily-update-usa.firebaseapp.com",
+  projectId: "daily-update-usa",
+  storageBucket: "daily-update-usa.firebasestorage.app",
+  messagingSenderId: "342674212806",
+  appId: "1:342674212806:web:be76407ad95f47c72ed4c7"
+};
+const db = getFirestore(initializeApp(firebaseConfig));
+
+document.getElementById("today").textContent = new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+const status = document.getElementById("status");
+const zones = ["news-a","news-a","news-b","news-b","news-c"].map(id => document.getElementById(id));
+
+onSnapshot(collection(db, "news"), snap => {
+  const items = [];
+  snap.forEach(d => { const x = d.data(); x.slot = Number(d.id.replace("slot","")); items.push(x); });
+  items.sort((a,b) => a.slot - b.slot);
+  new Set(zones).forEach(z => z.innerHTML = "");
+  if(!items.length){ status.style.display="block"; status.textContent="No news yet. Please check back soon."; return; }
+  status.style.display = "none";
+  items.slice(0,5).forEach((n, i) => {
+    const s = document.createElement("article"); s.className = "story";
+    const t = document.createElement("div"); t.className = "txt";
+    const h = document.createElement("h3"); h.textContent = n.title || "";
+    const tm = document.createElement("time");
+    if(n.updatedAt && n.updatedAt.toDate) tm.textContent = n.updatedAt.toDate().toLocaleString("en-US",{dateStyle:"medium",timeStyle:"short"});
+    const p = document.createElement("p"); p.textContent = n.content || "";
+    t.append(h, tm, p); s.appendChild(t);
+    if(n.imageUrl){
+      const pic = document.createElement("div"); pic.className = "pic";
+      const im = document.createElement("img"); im.src = n.imageUrl; im.alt = n.title || "News image"; im.loading = "lazy";
+      pic.appendChild(im); s.appendChild(pic);
+    }
+    zones[i].appendChild(s);
+  });
+}, err => { status.style.display="block"; status.textContent="Could not load news. Please refresh the page."; console.error(err); });
+</script>
+</body>
+</html>
